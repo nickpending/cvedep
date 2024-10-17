@@ -1,0 +1,26 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "CVE-2021-40438",
+      "nvd_link": "https://nvd.nist.gov/vuln/detail/CVE-2021-40438",
+      "description": "Server-Side Request Forgery (SSRF) vulnerability",
+      "known_exploited": true,
+      "dependencies": {
+        "features": ["proxy module"],
+        "conditions": ["reverse proxy mode"],
+        "configuration": ["ProxyPass directive"],
+        "notes": "Requires both proxy module and reverse proxy mode to be exploitable."
+      },
+      "resources": {
+        "official_advisory": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2021-40438",
+        "poc": "https://github.com/example/CVE-2021-40438-poc",
+        "patches": "https://github.com/apache/httpd/commit/c1456a3"
+      },
+      "metadata": {
+        "date_added": "2024-10-16",
+        "last_updated": "2024-10-16",
+        "contributor": "github_username"
+      }
+    }
+  ]
+}
