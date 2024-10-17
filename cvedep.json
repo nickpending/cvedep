@@ -9,13 +9,42 @@
         "features": ["mod_proxy"],
         "conditions": ["reverse proxy mode"],
         "configuration": [""],
-        "notes": "Requires enabling mod_proxy and setup for reverse proxy to be exploitable."
+        "notes": [
+            "Requires enabling mod_proxy and setup for reverse proxy to be exploitable."
+        ]
       },
       "resources": {
         "official_advisory": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2021-40438",
         "poc": "https://firzen.de/building-a-poc-for-cve-2021-40438",
-		"bugs": "https://bugzilla.redhat.com/show_bug.cgi?id=2005117",
+		    "bugs": "https://bugzilla.redhat.com/show_bug.cgi?id=2005117",
         "patches": "https://svn.apache.org/viewvc?view=revision&revision=1892814"
+      },
+      "metadata": {
+        "date_added": "2024-10-16",
+        "last_updated": "2024-10-16",
+        "contributor": "@nickpending"
+      }
+    },
+    {
+      "id": "CVE-2020-11984",
+      "nvd_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-11984",
+      "description": "Apache HTTP server 2.4.32 to 2.4.44 mod_proxy_uwsgi info disclosure and possible RCE",
+      "known_exploited": false,
+      "dependencies": {
+        "features": ["proxy_uwsgi", "mod_http2"],
+        "conditions": ["LimitRequestFieldSize"],
+        "configuration": [],
+        "notes": [
+            "If UWSGI is explicitly configured in persistent mode (puwsgi), this can also be used to smuggle a second UWSGI request leading to remote code execution.",
+            "In its standard configuration UWSGI only supports a single request per connection, making request smuggling impossible",
+            "mod_http2 incorrectly enforced LimitRequestFieldSize before R1863276"
+        ]
+      },
+      "resources": {
+        "official_advisory": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2020-11984",
+        "poc": "https://github.com/RubenBar/MLW-upcrans",
+		    "bugs": "https://packetstormsecurity.com/files/159009/Apache2-mod_proxy_uwsgi-Incorrect-Request-Handling.html",
+        "patches": "https://svn.apache.org/viewvc?view=revision&revision=1880251"
       },
       "metadata": {
         "date_added": "2024-10-16",
