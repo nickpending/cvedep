@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a6ee674c-e31e-48ce-a02d-fdf2c90dd0c3)
+![image](https://github.com/user-attachments/assets/94c98b51-9d71-465c-b1c2-94bd2348d059)
 
 # CVEDEP: CVE Dependencies Dataset
 
