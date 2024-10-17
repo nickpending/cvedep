@@ -23,12 +23,12 @@ Each CVE entry contains:
   "id": "CVE ID",
   "nvd_link": "Link to NVD entry",
   "description": "Vulnerability description",
-  "known_exploited": boolean,
+  "known_exploited": true,
   "dependencies": {
     "features": ["list of required features"],
     "conditions": ["list of required conditions"],
     "configuration": ["specific configs needed"],
-    "notes": "Additional context"
+    "notes": ["Additional context"]
   },
   "resources": {
     "official_advisory": "link",
@@ -111,12 +111,11 @@ Example output for "truly critical" CVEs (known exploited, no dependencies):
   "nvd_link": "https://nvd.nist.gov/vuln/detail/CVE-2023-XXXXX",
   "description": "Remote Code Execution in default configuration",
   "known_exploited": true,
-  "cvss_score": 9.8,
   "dependencies": {
     "features": [],
     "conditions": [],
     "configuration": [],
-    "notes": "Exploitable in default configuration without additional requirements"
+    "notes": ["Exploitable in default configuration without additional requirements"]
   },
   "resources": {
     "official_advisory": "https://example.com/advisory",
