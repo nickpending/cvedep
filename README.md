@@ -14,6 +14,7 @@ CVEDEP helps security teams by:
 - Providing verified technical references
 - Enabling better prioritization of remediation efforts
 
+I'll help clean up and restructure this section to make it clearer and more impactful.
 
 ### How is this different from CVSS or EPSS?
 
@@ -21,11 +22,26 @@ While both CVSS and EPSS are valuable approaches to vulnerability assessment, th
 
 > EPSS is a measure of threat – it estimates the probability that a vulnerability will experience exploitation activity in the wild.
 
+It's crucial to understand the distinction here: We think EPSS predicts the probability of experiencing an *attempted* exploitation, not a *successful* one. These are fundamentally different events. While EPSS can estimate the likelihood of an attempt, it cannot determine the probability of success.
+
+Consider CVE-2021-40438 as an example. This vulnerability has an EPSS score of 0.96 (very close to 1.0, indicating a high likelihood of attempted exploitation). However, our analysis shows that successful exploitation requires specific preconditions:
+- mod_proxy must be enabled
+- A reverse proxy configuration must be present
+
+So while EPSS correctly indicates you're likely to face an exploit attempt within 30 days, it provides no insight into whether that attempt could succeed given your specific configuration.
+
 Similarly, CVSS serves a different purpose:
 
 > CVSS is thought of as a measure of overall "severity" of a vulnerability.
 
-Our approach complements these existing frameworks by focusing specifically on dependency relationships and preconditions. While our method is currently manual and requires significant effort, we believe this work is essential to provide a clear prioritization framework for vulnerability remediation.
+CVSS provides a useful way to understand the theoretical impact of a vulnerability, but like EPSS, it doesn't account for the actual configurations and dependencies required for exploitation.
+
+Our approach complements these existing frameworks by:
+- Focusing on dependency relationships
+- Identifying specific preconditions required for exploitation
+- Providing context for vulnerability remediation priorities
+
+While our method is currently manual and requires significant effort, we believe this work is essential to provide a clear prioritization framework for vulnerability remediation.
 
 Reference: [EPSS FAQ](https://www.first.org/epss/faq)
 
