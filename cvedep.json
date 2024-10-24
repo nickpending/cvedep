@@ -2,7 +2,6 @@
   "vulnerabilities": [
     {
       "id": "CVE-2021-40438",
-      "nvd_link": "https://nvd.nist.gov/vuln/detail/cve-2021-40438",
       "description": "Server-Side Request Forgery (SSRF) vulnerability",
       "known_exploited": true,
       "dependencies": {
@@ -14,6 +13,8 @@
         ]
       },
       "resources": {
+        "nvd": "https://nvd.nist.gov/vuln/detail/cve-2021-40438",
+        "epss": "https://api.first.org/data/v1/epss?cve=CVE-2021-40438",
         "official_advisory": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2021-40438",
         "poc": "https://firzen.de/building-a-poc-for-cve-2021-40438",
 		    "bugs": "https://bugzilla.redhat.com/show_bug.cgi?id=2005117",
@@ -27,7 +28,6 @@
     },
     {
       "id": "CVE-2020-11984",
-      "nvd_link": "https://nvd.nist.gov/vuln/detail/CVE-2020-11984",
       "description": "Apache HTTP server 2.4.32 to 2.4.44 mod_proxy_uwsgi info disclosure and possible RCE",
       "known_exploited": false,
       "dependencies": {
@@ -41,6 +41,8 @@
         ]
       },
       "resources": {
+        "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2020-11984",
+        "epss": "https://api.first.org/data/v1/epss?cve=CVE-2021-11984",
         "official_advisory": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2020-11984",
         "poc": "https://github.com/RubenBar/MLW-upcrans",
 		    "bugs": "https://packetstormsecurity.com/files/159009/Apache2-mod_proxy_uwsgi-Incorrect-Request-Handling.html",

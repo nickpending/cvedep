@@ -52,7 +52,6 @@ Each CVE entry contains:
 ```json
 {
   "id": "CVE ID",
-  "nvd_link": "Link to NVD entry",
   "description": "Vulnerability description",
   "known_exploited": true,
   "dependencies": {
@@ -62,6 +61,8 @@ Each CVE entry contains:
     "notes": ["Additional context"]
   },
   "resources": {
+    "nvd": "Link to NVD entry",
+    "epss": "https://api.first.org/data/v1/epss?cve=CVE-XXXX-XXXXX",
     "official_advisory": "link",
     "poc": "link",
     "patches": "link"
