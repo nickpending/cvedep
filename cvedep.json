@@ -33,7 +33,7 @@
       "dependencies": {
         "features": ["proxy_uwsgi", "mod_http2"],
         "conditions": ["LimitRequestFieldSize"],
-        "configuration": [],
+        "configuration": ["The server must be configured to use mod_proxy_uwsgi to forward requests to a backend uWSGI server"],
         "notes": [
             "If UWSGI is explicitly configured in persistent mode (puwsgi), this can also be used to smuggle a second UWSGI request leading to remote code execution.",
             "In its standard configuration UWSGI only supports a single request per connection, making request smuggling impossible",

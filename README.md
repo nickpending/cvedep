@@ -14,6 +14,21 @@ CVEDEP helps security teams by:
 - Providing verified technical references
 - Enabling better prioritization of remediation efforts
 
+
+### How is this different from CVSS or EPSS?
+
+While both CVSS and EPSS are valuable approaches to vulnerability assessment, they don't address dependencies or preconditions. As stated by EPSS:
+
+> EPSS is a measure of threat – it estimates the probability that a vulnerability will experience exploitation activity in the wild.
+
+Similarly, CVSS serves a different purpose:
+
+> CVSS is thought of as a measure of overall "severity" of a vulnerability.
+
+Our approach complements these existing frameworks by focusing specifically on dependency relationships and preconditions. While our method is currently manual and requires significant effort, we believe this work is essential to provide a clear prioritization framework for vulnerability remediation.
+
+Reference: [EPSS FAQ](https://www.first.org/epss/faq)
+
 ## Schema Structure
 
 Each CVE entry contains:
