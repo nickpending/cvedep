@@ -5,11 +5,17 @@
       "description": "Server-Side Request Forgery (SSRF) vulnerability",
       "known_exploited": true,
       "dependencies": {
-        "features": ["mod_proxy"],
-        "conditions": ["reverse proxy mode"],
-        "configuration": [""],
+        "features": [
+          "mod_proxy"
+        ],
+        "conditions": [
+          "reverse proxy mode"
+        ],
+        "configuration": [
+          ""
+        ],
         "notes": [
-            "Requires enabling mod_proxy and setup for reverse proxy to be exploitable."
+          "Requires enabling mod_proxy and setup for reverse proxy to be exploitable."
         ]
       },
       "resources": {
@@ -17,7 +23,7 @@
         "epss": "https://api.first.org/data/v1/epss?cve=CVE-2021-40438",
         "official_advisory": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2021-40438",
         "poc": "https://firzen.de/building-a-poc-for-cve-2021-40438",
-		    "bugs": "https://bugzilla.redhat.com/show_bug.cgi?id=2005117",
+        "bugs": "https://bugzilla.redhat.com/show_bug.cgi?id=2005117",
         "patches": "https://svn.apache.org/viewvc?view=revision&revision=1892814"
       },
       "metadata": {
@@ -31,13 +37,20 @@
       "description": "Apache HTTP server 2.4.32 to 2.4.44 mod_proxy_uwsgi info disclosure and possible RCE",
       "known_exploited": false,
       "dependencies": {
-        "features": ["proxy_uwsgi", "mod_http2"],
-        "conditions": ["LimitRequestFieldSize"],
-        "configuration": ["The server must be configured to use mod_proxy_uwsgi to forward requests to a backend uWSGI server"],
+        "features": [
+          "proxy_uwsgi",
+          "mod_http2"
+        ],
+        "conditions": [
+          "LimitRequestFieldSize"
+        ],
+        "configuration": [
+          "The server must be configured to use mod_proxy_uwsgi to forward requests to a backend uWSGI server"
+        ],
         "notes": [
-            "If UWSGI is explicitly configured in persistent mode (puwsgi), this can also be used to smuggle a second UWSGI request leading to remote code execution.",
-            "In its standard configuration UWSGI only supports a single request per connection, making request smuggling impossible",
-            "mod_http2 incorrectly enforced LimitRequestFieldSize before R1863276"
+          "If UWSGI is explicitly configured in persistent mode (puwsgi), this can also be used to smuggle a second UWSGI request leading to remote code execution.",
+          "In its standard configuration UWSGI only supports a single request per connection, making request smuggling impossible",
+          "mod_http2 incorrectly enforced LimitRequestFieldSize before R1863276"
         ]
       },
       "resources": {
@@ -45,12 +58,46 @@
         "epss": "https://api.first.org/data/v1/epss?cve=CVE-2021-11984",
         "official_advisory": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2020-11984",
         "poc": "https://github.com/RubenBar/MLW-upcrans",
-		    "bugs": "https://packetstormsecurity.com/files/159009/Apache2-mod_proxy_uwsgi-Incorrect-Request-Handling.html",
+        "bugs": "https://packetstormsecurity.com/files/159009/Apache2-mod_proxy_uwsgi-Incorrect-Request-Handling.html",
         "patches": "https://svn.apache.org/viewvc?view=revision&revision=1880251"
       },
       "metadata": {
         "date_added": "2024-10-16",
         "last_updated": "2024-10-16",
+        "contributor": "@nickpending"
+      }
+    },
+    {
+      "id": "CVE-2024-53677",
+      "description": "File upload logic is flawed vulnerability in Apache Struts.",
+      "known_exploited": false,
+      "dependencies": {
+        "features": [
+          "FileUploadInterceptor"
+        ],
+        "conditions": [
+          "Accessible upload endpoint"
+        ],
+        "configuration": [
+          "The server must be using the deprecated FileUploadInterceptor"
+        ],
+        "notes": [
+          "This issue affects Apache Struts: from 2.0.0 before 6.4.0.",
+          "This change isn't backward compatible as you must rewrite your actions to start using the new Action File Upload mechanism and related interceptor. Keep using the old File Upload mechanism keeps you vulnerable to this attack.",
+          "Applications NOT using FileUploadInterceptor are safe"
+        ]
+      },
+      "resources": {
+        "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2024-53677",
+        "epss": "https://api.first.org/data/v1/epss?cve=CVE-2024-53677",
+        "official_advisory": "https://cwiki.apache.org/confluence/display/WW/S2-067",
+        "poc": "https://github.com/TAM-K592/CVE-2024-53677-S2-067",
+        "bugs": "",
+        "patches": ""
+      },
+      "metadata": {
+        "date_added": "2024-12-17",
+        "last_updated": "2024-12-17",
         "contributor": "@nickpending"
       }
     }
